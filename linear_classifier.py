@@ -19,9 +19,8 @@ class LinearClassifier(object):
 
         np.random.seed(42)
         num_train, dim = X.shape
-        num_classes = np.max(y) + 1 # assume y takes values 0...K-1 where K is number of classes
+        num_classes = np.max(y) + 1
         if self.W is None:
-            # lazily initialize W
             self.W = 0.001 * np.random.randn(dim, num_classes)
 
         for it in range(num_iters):
